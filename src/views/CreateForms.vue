@@ -1,14 +1,15 @@
 <template>
   <div>
-    <h1>this is home page</h1>
+      <h1>this is crete form</h1>
   </div>
-
 </template>
 
 <script>
-
 export default {
-  name: "Home",
 
-};
+}
 </script>
+
+<style>
+
+</style>
