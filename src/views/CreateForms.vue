@@ -4,12 +4,15 @@
     <p>.لطفا اطلاعات خود را وارد کنید</p>
     <form @submit.prevent="handleSubmit">
       <input type="text" required placeholder="نام" v-model="firstName"/>
+      <div v-if="MobileError" class="error">{{firstNameError}}</div>
       <input type="text" required placeholder="نام خانوادگی" v-model="lastName"/>
+      <div v-if="MobileError" class="error">{{lastNameError}}</div>
       <input type="tel" required placeholder="تلفن همراه" v-model="Mobile"/>
       <div v-if="MobileError" class="error">{{MobileError}}</div>
       <input type="tel" required placeholder="تلفن ثابت" v-model="phone"/>
       <div v-if="PhoneError" class="error">{{PhoneError}}</div>
       <input type="text" required placeholder="آدرس دقیق" v-model="address"/>
+      <div v-if="MobileError" class="error">{{addressError}}</div>
       <select v-model="gender">
         <option value="female">خانم</option>
         <option value="male">آقا</option>
@@ -29,15 +32,21 @@ export default {
       phone:'',
       address:'',
       gender:'',
+      firstNameError:'',
+      lastNameError:'',
       MobileError:'',
-      PhoneError:''
+      PhoneError:'',
+      addressError:'',
     }
   },
   methods:{
   handleSubmit(){
     //validate Mobile 
+    this.firstNameError = this.firstName.length >3 ? '' : 'نام وارد شده باید حداقل ۳ حرف داشته باشد';
+    this.lastNameError = this.lastName.length >3 ? '' : 'نام وارد شده باید حداقل ۳ حرف داشته باشد';
     this.MobileError = this.Mobile.length >11 ? '' : '.شماره وارد شده باید حداقل ۱۱ رقم داشته باشد';
     this.PhoneError = this.phone.length >11 ? '' : '.شماره وارد شده باید حداقل ۱۱ رقم داشته باشد';
+    this.addressError = this.address.length > 5 ? '' : 'نام وارد شده باید حداقل ۵ حرف داشته باشد';
 
   }
   }
