@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-for="form in forms" :key="form.id" class="form-preview">
-      <router-link to="{name:'FormDetail', params:{id:form.id}}">
+      <router-link :to="{name:'FormDetails', params:{id:form.id}}">
         <p>{{form.firstName}}:نام</p>
         <p>{{form.lastName}} :نام خانوادگی</p>
         <p>{{form.address}} :آدرس</p>
@@ -28,11 +28,13 @@ export default {
 
 <style scoped>
 .form-preview {
-  padding: 10px 16px;
-  margin: 20px 0;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
   border-bottom: 1px solid #fafafa;
   text-align: right;
   background-color: #f2f2f2;
+  cursor: pointer;
 }
 .form-preview:hover {
   box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);

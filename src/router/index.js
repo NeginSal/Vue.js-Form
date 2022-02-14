@@ -1,6 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import CreateForms from "../views/CreateForms.vue";
+import Forms from "../views/forms/Forms.vue";
+import FormDetails from "../views/forms/FormDetails.vue";
 
 Vue.use(VueRouter);
 
@@ -8,20 +11,27 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home,
+    component: Home
   },
   {
     path: "/forms",
     name: "Forms",
-    component: () =>
-      import("../views/Forms.vue"),
+    component: Forms
+  },
+  {
+    path: "/forms/:id",
+    name: "FormDetails",
+    component: FormDetails,
+    
   },
   {
     path: "/create",
     name: "CreateForms",
-    component: () =>
-      import("../views/CreateForms.vue"),
+    component: CreateForms,
   },
+  {
+    
+  }
 ];
 
 const router = new VueRouter({

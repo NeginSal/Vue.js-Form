@@ -12,7 +12,7 @@
              <router-link class="nav-link" to="/">Home</router-link>
            </li>
            <li class="nav-item">
-              <router-link class="nav-link" to="/forms">Forms</router-link>
+             <router-link class="nav-link" to="/forms">Forms</router-link>
            </li>
            <li class="nav-item">
               <router-link class="nav-link" to="/create">Create Form</router-link>

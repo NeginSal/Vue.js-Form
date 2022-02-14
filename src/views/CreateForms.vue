@@ -45,7 +45,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .create {
   max-width: 400px;
   margin: 0 auto;
