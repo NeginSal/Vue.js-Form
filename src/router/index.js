@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import NotFound from "../views/NotFound.vue";
 import CreateForms from "../views/CreateForms.vue";
 import Forms from "../views/forms/Forms.vue";
 import FormDetails from "../views/forms/FormDetails.vue";
@@ -11,18 +12,17 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
   },
   {
     path: "/forms",
     name: "Forms",
-    component: Forms
+    component: Forms,
   },
   {
     path: "/forms/:id",
     name: "FormDetails",
     component: FormDetails,
-    
   },
   {
     path: "/create",
@@ -30,8 +30,10 @@ const routes = [
     component: CreateForms,
   },
   {
-    
-  }
+    path: "*",
+    name: "NotFound",
+    component: NotFound,
+  },
 ];
 
 const router = new VueRouter({
