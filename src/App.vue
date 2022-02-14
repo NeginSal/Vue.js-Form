@@ -15,4 +15,13 @@ export default {
 </script>
 
 <style>
+#app{
+  font-family: Avenir,Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #2c3e50;
+}
+body{
+  margin: 0%;
+  background: #eee;
+}
 </style>
