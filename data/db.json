@@ -1,23 +1,22 @@
 {
-    "forms": [
-      {
-        "firstName": "A",
-        "lastName": "AA",
-        "Mobile": "8488",
-        "phone": "4488987",
-        "address": "hdfdhj",
-        "gender": "female",
-        "id": 1
-      },
-      {
-        "firstName": "B",
-        "lastName": "BB",
-        "Mobile": "8488",
-        "phone": "4488987",
-        "address": "dffkdklfjdjfoiidf",
-        "gender": "male",
-        "id": 2
-      }
-  
-    ]
-  }
+  "forms": [
+    {
+      "firstName": "A",
+      "lastName": "AA",
+      "Mobile": "8488",
+      "phone": "4488987",
+      "address": "hdfdhj",
+      "gender": "female",
+      "id": 1
+    },
+    {
+      "firstName": "B",
+      "lastName": "BB",
+      "Mobile": "8488",
+      "phone": "4488987",
+      "address": "dffkdklfjdjfoiidf",
+      "gender": "male",
+      "id": 2
+    }
+  ]
+}
