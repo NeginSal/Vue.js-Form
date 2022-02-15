@@ -13,7 +13,7 @@
         <p>Loading form details ...</p>
       </div>
     </div>
-          <router-link to="/forms">بازگشت به خانه </router-link>
+          <router-link to="/">بازگشت به خانه </router-link>
   </div>
 </template>
 

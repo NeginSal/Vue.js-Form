@@ -5,12 +5,7 @@
     <form @submit.prevent="handleSubmit">
       <input type="text" required placeholder="نام" v-model="firstName" />
       <div v-if="MobileError" class="error">{{ firstNameError }}</div>
-      <input
-        type="text"
-        required
-        placeholder="نام خانوادگی"
-        v-model="lastName"
-      />
+      <input type="text" required placeholder="نام خانوادگی" v-model="lastName"/>
       <div v-if="MobileError" class="error">{{ lastNameError }}</div>
       <input type="tel" required placeholder="تلفن همراه" v-model="Mobile" />
       <div v-if="MobileError" class="error">{{ MobileError }}</div>
@@ -56,12 +51,12 @@ export default {
         this.firstNameError =
           this.firstName.length > 3
             ? ""
-            : "نام وارد شده باید حداقل ۳ حرف داشته باشد";
+            : ".نام وارد شده باید حداقل ۳ حرف داشته باشد";
 
         this.lastNameError =
           this.lastName.length > 3
             ? ""
-            : "نام وارد شده باید حداقل ۳ حرف داشته باشد";
+            : ".نام وارد شده باید حداقل ۳ حرف داشته باشد";
 
         this.MobileError =
           this.Mobile.length > 11
@@ -74,7 +69,7 @@ export default {
         this.addressError =
           this.address.length > 5
             ? ""
-            : "نام وارد شده باید حداقل ۵ حرف داشته باشد";
+            : ".نام وارد شده باید حداقل ۵ حرف داشته باشد";
       } else {
         let project = {
           firstName: this.firstName,

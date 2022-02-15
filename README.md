@@ -10,15 +10,12 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
+### Using Json Server
+after `npm run serve` open new terminal and type:
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+`npx json-server --watch data/db.json --port 8000` .
+
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
