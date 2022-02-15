@@ -3,7 +3,6 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import NotFound from "../views/NotFound.vue";
 import CreateForms from "../views/CreateForms.vue";
-import Forms from "../views/forms/Forms.vue";
 import FormDetails from "../views/forms/FormDetails.vue";
 
 Vue.use(VueRouter);
@@ -13,11 +12,6 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
-  },
-  {
-    path: "/forms",
-    name: "Forms",
-    component: Forms,
   },
   {
     path: "/forms/:id",

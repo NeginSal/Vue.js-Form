@@ -17,7 +17,7 @@
       <input type="tel" required placeholder="تلفن ثابت" v-model="phone" />
       <div v-if="PhoneError" class="error">{{ PhoneError }}</div>
       <input type="text" required placeholder="آدرس دقیق" v-model="address" />
-      <div v-if="MobileError" class="error">{{ addressError }}</div>
+      <div v-if="MobileError" class="error">{{  addressError }}</div>
       <select v-model="gender">
         <option value="female">خانم</option>
         <option value="male">آقا</option>
@@ -46,44 +46,55 @@ export default {
   },
   methods: {
     handleSubmit() {
-      //validate Mobile
-      this.firstNameError =
-        this.firstName.length > 3
-          ? ""
-          : "نام وارد شده باید حداقل ۳ حرف داشته باشد";
-      this.lastNameError =
-        this.lastName.length > 3
-          ? ""
-          : "نام وارد شده باید حداقل ۳ حرف داشته باشد";
-      this.MobileError =
-        this.Mobile.length > 11
-          ? ""
-          : ".شماره وارد شده باید حداقل ۱۱ رقم داشته باشد";
-      this.PhoneError =
-        this.phone.length > 11
-          ? ""
-          : ".شماره وارد شده باید حداقل ۱۱ رقم داشته باشد";
-      this.addressError =
-        this.address.length > 5
-          ? ""
-          : "نام وارد شده باید حداقل ۵ حرف داشته باشد";
+      if (
+        !this.firstNameError &&
+        !this.lastNameError &&
+        !this.MobileError &&
+        !this.PhoneError &&
+        !this.addressError
+      ) {
+        this.firstNameError =
+          this.firstName.length > 3
+            ? ""
+            : "نام وارد شده باید حداقل ۳ حرف داشته باشد";
 
-      let project = {
-        firstName: this.firstName,
-        lastName: this.lastName,
-        Mobile: this.Mobile,
-        phone: this.phone,
-        address: this.address,
-        gender: this.gender,
-      };
-      console.log(project);
-      fetch("http://localhost:8000/forms", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(project),
-      }).then(() => {
-        this.$router.push('/forms')
-      }).catch((err)=> console.log(err))
+        this.lastNameError =
+          this.lastName.length > 3
+            ? ""
+            : "نام وارد شده باید حداقل ۳ حرف داشته باشد";
+
+        this.MobileError =
+          this.Mobile.length > 11
+            ? ""
+            : ".شماره وارد شده باید حداقل ۱۱ رقم داشته باشد";
+        this.PhoneError =
+          this.phone.length > 11
+            ? ""
+            : ".شماره وارد شده باید حداقل ۱۱ رقم داشته باشد";
+        this.addressError =
+          this.address.length > 5
+            ? ""
+            : "نام وارد شده باید حداقل ۵ حرف داشته باشد";
+      } else {
+        let project = {
+          firstName: this.firstName,
+          lastName: this.lastName,
+          Mobile: this.Mobile,
+          phone: this.phone,
+          address: this.address,
+          gender: this.gender,
+        };
+        console.log(project);
+        fetch("http://localhost:8000/forms", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(project),
+        })
+          .then(() => {
+            this.$router.push("/");
+          })
+          .catch((err) => console.log(err));
+      }
     },
   },
 };
